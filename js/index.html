@@ -3,14 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Debouncing Example</title>
 </head>
 <body>
-    <button>click me</button>
-    <script src="./practice.js">
 
+    <input type="text" id="searchBox" placeholder="Type something...">
+    <button id="submitBtn">Submit</button>
+
+    <script>
+        document.getElementById("searchBox").addEventListener("input", debouncingFunction);
+        document.getElementById("submitBtn").addEventListener("click", fetchData);
+
+        let whichCall = 0;
+        let debounceTimer;
+
+        function fetchData() {
+            console.log("Fetching Data", whichCall++);
+        }
+
+        function debouncingFunction() {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(fetchData, 2000);
+        }
     </script>
-   
-    
+
 </body>
 </html>

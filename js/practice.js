@@ -188,69 +188,226 @@
 
 
 
-function reachedRestaurant(callback){
-    console.log("Reached Restaurant");
-    setTimeout(callback, 1000);
-}
-function findingTable(callback){
-    console.log("Finding Table");
-    setTimeout(callback, 1000);
-}
-function discoveringMenu(callback){
-    console.log("Discovering Menu");
-    setTimeout(callback, 1000);
-}
-function checkingPrice(callback){
-    console.log("Checking Price");
-    setTimeout(callback, 1000);
-}
-function orderingStarters(callback){
-    console.log("Ordering Starters");
-    setTimeout(callback, 1000);
-}
-function orderingMainCourse(callback){
-    console.log("Ordering Main Course");
-    setTimeout(callback, 1000);
-}
-function orderingDesserts(callback){
-    console.log("Ordering Desserts");
-    setTimeout(callback, 1000);
-}
-function payingBill(callback){
-    console.log("Paying Bill");
-    setTimeout(callback, 1000);
-}
-function eatingSauf(callback){
-    console.log("Eating Sauf");
-    setTimeout(callback, 1000);
-}
-function leavingRestaurant(callback){
-    console.log("Leaving Restaurant");
-    setTimeout(callback, 1000);
-}
+// function reachedRestaurant(callback){
+//     console.log("Reached Restaurant");
+//     setTimeout(callback, 1000);
+// }
+// function findingTable(callback){
+//     console.log("Finding Table");
+//     setTimeout(callback, 1000);
+// }
+// function discoveringMenu(callback){
+//     console.log("Discovering Menu");
+//     setTimeout(callback, 1000);
+// }
+// function checkingPrice(callback){
+//     console.log("Checking Price");
+//     setTimeout(callback, 1000);
+// }
+// function orderingStarters(callback){
+//     console.log("Ordering Starters");
+//     setTimeout(callback, 1000);
+// }
+// function orderingMainCourse(callback){
+//     console.log("Ordering Main Course");
+//     setTimeout(callback, 1000);
+// }
+// function orderingDesserts(callback){
+//     console.log("Ordering Desserts");
+//     setTimeout(callback, 1000);
+// }
+// function payingBill(callback){
+//     console.log("Paying Bill");
+//     setTimeout(callback, 1000);
+// }
+// function eatingSauf(callback){
+//     console.log("Eating Sauf");
+//     setTimeout(callback, 1000);
+// }
+// function leavingRestaurant(callback){
+//     console.log("Leaving Restaurant");
+//     setTimeout(callback, 1000);
+// }
 
 
-// chaining the callbacks
+// // chaining the callbacks
 
 
-reachedRestaurant(function(){
-    findingTable(function(){
-        discoveringMenu(function(){
-            checkingPrice(function(){
-                orderingStarters(function(){
-                    orderingMainCourse(function(){
-                        orderingDesserts(function(){
-                            payingBill(function(){
-                                eatingSauf(function(){
-                                    leavingRestaurant(function(){
-                                        console.log("done!");
-                                    });
-                                });
-                            });
-                        });
-                    });
-                });
-            });
-        });
-    });
+// reachedRestaurant(function(){
+//     findingTable(function(){
+//         discoveringMenu(function(){
+//             checkingPrice(function(){
+//                 orderingStarters(function(){
+//                     orderingMainCourse(function(){
+//                         orderingDesserts(function(){
+//                             payingBill(function(){
+//                                 eatingSauf(function(){
+//                                     leavingRestaurant(function(){
+//                                         console.log("done!");
+//                                     });
+//                                 });
+//                             });
+//                         });
+//                     });
+//                 });
+//             });
+//         });
+//     });
+// });
+
+
+
+
+
+
+
+
+
+
+
+// function x(){
+//     console.log("I am x");
+// }
+// function y(args){
+//     console.log("I am y");
+//     args();
+// }
+// y(x);
+
+
+
+
+
+
+
+
+
+
+// data = [2,4,6,8,10];
+
+
+// const calculateDoubleData = function(data){
+//     const output=[];
+//     for(let i=0; i<data.length;i++){
+//         output.push(data[i]*2);
+//     }
+//     return output;
+// }
+// console.log(calculateDoubleData(data));
+
+// const calculateHalfData = function(data){
+//     const output=[];
+//     for(let i=0;i<data.length;i++){
+//         output.push(data[i]/2);
+//     }
+//     return output;   
+// }
+// console.log(calculateHalfData(data));
+
+// const calculateAddTen = function(data){
+//     const output=[];
+//     for(let i=0;i<data.length;i++){
+//         output.push(data[i]+10);
+//     }
+//     return output;
+// }
+// console.log(calculateAddTen(data));
+
+
+
+
+
+// const users = [
+//     {firstName:"Pratiyush", lastName:"Ray", age:25},
+//     {firstName:"Piyush", lastName:"Saini", age:22},
+//     {firstName:"Sahil", lastName:"Aggarwal", age:21},
+//     {firstName:"Ayush", lastName:"Jawa",age:22},
+//     {firstName:"Daksh", lastName:"Singh",age:21},
+// ]
+
+// const fullName = users.map((user)=> user.firstName + " " + user.lastName);
+// console.log(fullName);
+
+
+
+
+
+
+
+
+
+
+
+const myPromiseFromNetflix = new Promise(function (resolve, reject) {
+    setTimeout(() => {
+        resolve("Fetched data from Netflix");
+    }, 1000);
 });
+
+const myPromiseFromTwitter = new Promise(function (resolve, reject) {
+    setTimeout(() => {
+        resolve("Fetched data from Twitter");
+    }, 2000);
+});
+
+const myPromiseFromGitHub = new Promise(function (resolve, reject) {
+    setTimeout(() => {
+        reject("Failed to fetch data from GitHub");
+    }, 3000);
+});
+
+const myPromiseFromHotstar = new Promise(function (resolve, reject) {
+    setTimeout(() => {
+        resolve("Fetched data from Hotstar");
+    }, 4000);
+});
+
+const dataFromAll = Promise.all([
+    myPromiseFromNetflix,
+    myPromiseFromTwitter,
+    myPromiseFromGitHub,
+    myPromiseFromHotstar
+]);
+
+dataFromAll
+    .then(results => console.log("All data fetched:", results))
+    .catch(error => console.log("Error:", error));
+
+
+
+
+
+    const fromRace = Promise.allSettled([myPromiseFromGitHub, myPromiseFromHotstar, myPromiseFromNetflix, myPromiseFromTwitter]);
+    console.log(fromRace);
+
+    const fromAny = Promise.any([myPromiseFromGitHub, myPromiseFromHotstar, myPromiseFromNetflix, myPromiseFromTwitter]);
+    console.log(fromAny);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    document.getElementById("searchBox").addEventListener("input", debouncingFunction);
+    document.getElementById("submitBtn").addEventListener("click", fetchData);
+    
+    let whichCall = 0;
+    let debounceTimer;
+    
+    function fetchData() {
+        console.log("Fetching Data", whichCall++);
+    }
+    
+    function debouncingFunction() {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(fetchData, 2000);
+    }
+    
